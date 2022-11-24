@@ -1,0 +1,138 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    start_swap.txt                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/24 13:50:26 by pgorner           #+#    #+#              #
+#    Updated: 2022/11/24 14:40:17 by pgorner          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+================================================================================
+					Difference between algorithm and code
+================================================================================
+	Algorithm and code are different, but related things. The relationship isn't
+	simple: Code expresses algorithms.
+________________________________________________________________________________
+			Algorithm				||				Code
+________________________________________________________________________________
+	A well designed series of steps	||	Instructions for machines to execute
+	for solving a big problem		||
+
+
+================================================================================
+				Difference between unit and integration testing
+================================================================================
+			Unit Testing			||			Integration Testing
+________________________________________________________________________________
+1.	In unit testing, each module 	||	In integration testing, all modules of
+	of the software is tested		||	the software are tested combined.
+	separately.						||
+________________________________________________________________________________
+2.	In unit testing tester knows	||	Integration testing doesn’t know
+	the internal design of the		||	the internal design of the software.
+	software.						||
+________________________________________________________________________________
+3.	Unit testing is performed		||	Integration testing is performed after
+	first of all testing processes.	||	unit testing and before system testing.
+________________________________________________________________________________
+4.	Unit testing is white box		||	Integration testing is black box
+	testing.						||	testing.
+________________________________________________________________________________
+5.	Unit testing is performed by	||	Integration testing is performed by
+	the developer.					||	the tester.
+________________________________________________________________________________
+6.	Detection of defects in unit	||	Detection of defects in integration
+	testing is easy.				||	testing is difficult.
+________________________________________________________________________________
+7.	It tests parts of the project	||	It tests only after the completion
+	without waiting for others to	||	of all parts.
+	be completed.					||
+________________________________________________________________________________
+8.	Unit testing is less costly.	||	Integration testing is more costly.
+________________________________________________________________________________
+9.	Unit testing is responsible to	||	Error detection takes place when
+	observe only the functionality	||	modules are integrated to create
+	of the individual units.		||	an overall system.
+________________________________________________________________________________
+10.	Module specification is done	||	Interface specification is done
+	initially.						||	initially.
+________________________________________________________________________________
+11.	The proper working of your code	||	The proper working of your code with
+	with the external dependencies	||	the external dependencies is
+	is not ensured by unit testing.	||	ensured by integration testing.
+________________________________________________________________________________
+12.	Maintenance is cost effective.	||	Maintenance is expensive.
+________________________________________________________________________________
+13.	Fast execution as compared to	||	Its speed is slow because of the
+	integration testing.			||	integration of modules.
+________________________________________________________________________________
+14.	Unit testing results in			||	Integration testing results in the
+	in-depth exposure to the code.	||	integration structure’s detailed
+									||	visibility.
+
+================================================================================
+									Stack
+================================================================================
+	A Stack is a LIFO (Last In First Out) data structure. The 🄿🅄🅂🄷 and 🅿🅾🅿
+	operations are simple. 🄿🅄🅂🄷 puts something on the stack, 🅿🅾🅿 takes
+	something off. You put onto the top, and take off the top, to preserve
+	the LIFO order.
+
+================================================================================
+			Visualization Stack 🄿🅄🅂🄷ing && 🅿🅾🅿ping
+================================================================================
+Empty Stack:
+|     |
+|     |
+|     |
+-------
+After 🄿🅄🅂🄷ing A, you get:
+|     |
+|     |
+|  A  |
+-------
+After 🄿🅄🅂🄷ing B, you get:
+|     |
+|  B  |
+|  A  |
+-------
+After 🅿🅾🅿ping, you get:
+|     |
+|     |
+|  A  |
+-------
+After 🄿🅄🅂🄷ing C, you get:
+|     |
+|  C  |
+|  A  |
+-------
+After 🅿🅾🅿ping, you get:
+|     |
+|     |
+|  A  |
+-------
+After 🅿🅾🅿ping, you get:
+|     |
+|     |
+|     |
+-------
+
+================================================================================
+			What should swap and rotate on a 1-element stack do?
+================================================================================
+	Do nothing leave as is ??
+
+================================================================================
+					What should 🄿🅄🅂🄷 with NULL be?
+================================================================================
+	"🄿🅄🅂🄷 0"
+	"null can be 🄿🅄🅂🄷ed onto the Stack as a placeholder, if needed. It occupies
+	a slot in the stack and is treated like any object."
+
+================================================================================
+			What should be the result of 🅿🅾🅿ping an empty stack?
+================================================================================
+	Nothing -- 🅿🅾🅿 should only be done if Stack isnt empty
