@@ -6,10 +6,11 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 17:56:15 by pgorner           #+#    #+#             */
-/*   Updated: 2022/11/27 15:29:42 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/11/28 16:25:09 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
 int s_size (int *a)
 {

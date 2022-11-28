@@ -1,41 +1,35 @@
-NAME = push_swap.a
-
 CC =		cc
 CFLAGS =	-Wall -Werror -Wextra
 AR =		ar rcs
-RM =		rm -f
-
-LIBFT_DIR	= libft
-LIBFT_LIB	= libft.a
-LIBFT		= $(LIBFT_DIR)/$(LIBFT_LIB)#
+RM =		rm -rf
 
 SRC =		ft_split.c	\
 			ps_utils.c	\
 			push_swap.c	\
-			push_swap.h	\
 			push.c		\
 
 OBJS =		$(SRC:.c=.o)
 
-$(NAME):	$(LIBFT) $(OBJS)
-			$(AR) $(NAME) $(OBJS)
+LIBFT = ./libft/libft.a
 
 all :		$(NAME)
 
-clean :
-			$(RM) $(OBJS)
-			make clean -C $(LIBFT_DIR)
-
-fclean :	clean
-			$(RM) $(NAME)
-			make fclean -C $(LIBFT_DIR)
-
-re :		fclean
-			$(MAKE) all
-
-libft:		$(LIBFT)
+$(NAME):	$(LIBFT) $(OBJS)
+			@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
-			git clone https://github.com/Pgorner/libft.git $(LIBFT_DIR); make -C $(LIBFT_DIR)
+			@git clone https://github.com/Pgorner/libft.git
+			@cd libft && make && make clean
+
+clean :
+			$(RM) $(OBJS)
+
+fclean :	clean
+			@$(RM) $(NAME)
+			@$(RM) ./libft
+
+re :		fclean all
+
+
 
 .PHONY: all clean fclean re
