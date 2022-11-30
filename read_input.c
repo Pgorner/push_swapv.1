@@ -1,41 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   read_input.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 17:56:15 by pgorner           #+#    #+#             */
-/*   Updated: 2022/11/29 18:44:57 by pgorner          ###   ########.fr       */
+/*   Created: 2022/11/30 14:25:25 by pgorner           #+#    #+#             */
+/*   Updated: 2022/11/30 14:28:35 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include "push_swap.h"
-
-int s_size (int *a)
+int read_input(int argc, char *argv[])
 {
-	int i;
+	if(check_valid(argc, argv) == ERR_INVAL)
+		return(error, 0);
+	if(argv == 2)
 
-	i = 0;
-
-	while(!a[i++])
-	return(i);
 }
-
-int push(t_s stacks, int flag)
-{
-	if(flag == A)
-	{
-		count = s_size(a);
-		if(count == 0)
-			break;
-	}
-	if(flag == B)
-	{
-		count = s_size(b);
-		if(count == 0)
-			break;
-	}
-	return(0);
-}
- */

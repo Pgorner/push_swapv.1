@@ -1,25 +1,27 @@
+NAME = push_swap
+
 CC =		cc
 CFLAGS =	-Wall -Werror -Wextra
 AR =		ar rcs
 RM =		rm -rf
 
-SRC =		ft_split.c	\
-			ps_utils.c	\
+SRC =		ps_utils.c	\
 			push_swap.c	\
 			push.c		\
+			is_digit.c	\
 
 OBJS =		$(SRC:.c=.o)
 
 LIBFT = ./libft/libft.a
 
-all :		$(NAME)
-
 $(NAME):	$(LIBFT) $(OBJS)
-			@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 			@git clone https://github.com/Pgorner/libft.git
 			@cd libft && make && make clean
+
+all :		$(NAME)
 
 clean :
 			$(RM) $(OBJS)
@@ -30,6 +32,6 @@ fclean :	clean
 
 re :		fclean all
 
-
+libft: $(LIBFT)
 
 .PHONY: all clean fclean re

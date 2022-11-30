@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 17:56:15 by pgorner           #+#    #+#             */
-/*   Updated: 2022/11/29 18:44:57 by pgorner          ###   ########.fr       */
+/*   Created: 2022/11/30 14:27:32 by pgorner           #+#    #+#             */
+/*   Updated: 2022/11/30 15:01:27 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include "push_swap.h"
-
-int s_size (int *a)
+int get_stack(int argc,char *argv[],t_s *stacks)
 {
-	int i;
-
+/* 	char	*str;
+	char	*inp; */
+	int		i;
+	if(stacks->a == 0)
+		return(0);
 	i = 0;
+	if(valid(argv) == ERR_INVAL)
+		return(ERR_INVAL);
+	if(argc == 2)
+		return(1);
 
-	while(!a[i++])
-	return(i);
+		/*inp = ft_itoa(argv);
+		printf("%s", inp);
+		str = *ft_split(argv, SPACE);
+		printf("%s", str);
+		if(!argv || valid(str) == ERR_INVAL)
+			return(ERR_INVAL); */
+	return (0);
 }
-
-int push(t_s stacks, int flag)
-{
-	if(flag == A)
-	{
-		count = s_size(a);
-		if(count == 0)
-			break;
-	}
-	if(flag == B)
-	{
-		count = s_size(b);
-		if(count == 0)
-			break;
-	}
-	return(0);
-}
- */

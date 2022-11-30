@@ -6,28 +6,15 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 15:10:33 by pgorner           #+#    #+#             */
-/*   Updated: 2022/11/28 16:59:26 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/11/30 15:01:24 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int valid(char *str)
+void error(int i)
 {
-	while(!str[i] && INT_MIN < str[i] < INT_MAX)
-		++str;
-	if(!str[i])
-		return(SUCESS);
-	else
-		return(ERR_INVAL);
+	if(i == 1)
+		ft_printf("ERROR");
 }
 
-int get_stack(int argc,int argv,t_s *stacks)
-{
-	char	*str;
-
-	str = ft_split(argv, SPACE);
-	printf("%s", str);
-	if(!argv || valid(str) == ERR_INVAL)
-		return(ERR_INVAL);
-}
