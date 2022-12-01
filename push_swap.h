@@ -6,14 +6,22 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:29:25 by pgorner           #+#    #+#             */
-/*   Updated: 2022/11/30 13:17:20 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/01 15:01:54 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//  ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗
+//  ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+//  ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+//  ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+//  ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+//  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <limits.h>
 # include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -26,27 +34,43 @@
 
 typedef struct stacks
 {
-	int *a;
-	int *b;
-	int *tmp;
+	int		size;
+	char	**a;
+	char	*b;
+	char	**tmp;
+	char	*str;
+	char	**res;
 } t_s;
 
 // =============================================================================
 //
 // =============================================================================
 // Checks wether all the ints are correct and ints at all
-int	valid(char *argv[]);
+int		valid(char *argv[]);
+//checks wether there are doubles
+int		check_double(t_s *stacks);
 // Gets the stack from the initial read
-int get_stack(int argc,char *argv[],t_s *stacks);
+int		in_stack(int argc,char *argv[],t_s *stacks);
+//read inoput
+int		read_input(int argc, char *argv[], t_s *stacks);
 // Push
-int push(t_s *stacks, int flag);
+int		push(t_s *stacks, int flag);
 // main
-int main(int argc, char *argv[]);
+int		main(int argc, char *argv[]);
 // determines the stack size
-int s_size (int *a);
+int		s_size (int *a);
 // checks if its a digit
-int is_digit(char check);
+int		is_digit(char check);
 //checks if its valid
-int check_valid(int argc, char *argv[]);
+int		check_valid(int argc, char *argv[]);
+// Joins all the strings that are input
+char	*join_inpt(int argc, char *argv[]);
+// checks for all space
+int		space_check(int argc, char *argv[]);
+// error msg
+int		ft_error(int i);
+// negative or positive number with sign
+int		egpos_check(int argc, char *argv[]);
+
 
 #endif
