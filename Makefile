@@ -21,11 +21,11 @@ RM =		rm -rf
 			all
 			$(NAME)
 
-SRC =		ps_utils.c		\
-			push_swap.c		\
-			push.c			\
-			check_valid.c	\
+SRC =		push_swap.c		\
 			read_input.c	\
+			utils_a.c		\
+			utils.c			\
+			valid.c			\
 
 OBJS =		$(SRC:.c=.o)
 

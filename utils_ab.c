@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   utils_ab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 17:56:15 by pgorner           #+#    #+#             */
-/*   Updated: 2022/11/29 18:44:57 by pgorner          ###   ########.fr       */
+/*   Created: 2022/12/05 19:33:49 by pgorner           #+#    #+#             */
+/*   Updated: 2022/12/05 19:48:07 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include "push_swap.h"
+#include "push_swap.h"
 
-int s_size (int *a)
+void	ss(t_s *stacks)
 {
-	int i;
-
-	i = 0;
-
-	while(!a[i++])
-	return(i);
+	sa(stacks);
+	sb(stacks);
 }
 
-int push(t_s stacks, int flag)
+void	rr(t_s *stacks)
 {
-	if(flag == A)
-	{
-		count = s_size(a);
-		if(count == 0)
-			break;
-	}
-	if(flag == B)
-	{
-		count = s_size(b);
-		if(count == 0)
-			break;
-	}
-	return(0);
+	ra(stacks);
+	rb(stacks);
 }
- */
+
+void	rrr(t_s *stacks)
+{
+	rra(stacks);
+	rrb(stacks);
+}
