@@ -6,11 +6,11 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:16:03 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/05 20:07:54 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/06 19:37:17 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	sa(t_s *stacks)
 {
@@ -24,9 +24,9 @@ void	sa(t_s *stacks)
 
 void	pa(t_s *stacks)
 {
-	if (size(stacks->b) != 0)
+	if (size(stacks->b) != -1)
 	{
-		stacks->b[size(stacks->b)] = stacks->a[size(stacks->a) + 1];
+		stacks->a[size(stacks->a) + 1] = stacks->b[size(stacks->b)];
 		stacks->b[size(stacks->b)] = NULL;
 	}
 }
@@ -34,17 +34,15 @@ void	pa(t_s *stacks)
 void	ra(t_s *stacks)
 {
 	int	i;
-	int	j;
 
-	j = 1;
 	i = size(stacks->a);
-	stacks->a[0] = stacks->tmp[0];
-	while (j <= i)
-	{
-		stacks->a[j] = stacks->a[j - 1];
-		++j;
-	}
 	stacks->tmp[0] = stacks->a[i];
+	while (i >= 1)
+	{
+		stacks->a[i] = stacks->a[i - 1];
+		--i;
+	}
+	stacks->a[0] = stacks->tmp[0];
 }
 
 void	rra(t_s *stacks)
@@ -52,13 +50,13 @@ void	rra(t_s *stacks)
 	int	i;
 	int	j;
 
+	j = 0;
 	i = size(stacks->a);
-	j = i - 1;
-	stacks->a[i] = stacks->tmp[0];
-	while (j >= 0)
+	stacks->tmp[0] = stacks->a[0];
+	while (j < i)
 	{
 		stacks->a[j] = stacks->a[j + 1];
-		--j;
+		++j;
 	}
-	stacks->tmp[0] = stacks->a[0];
+	stacks->a[i] = stacks->tmp[0];
 }

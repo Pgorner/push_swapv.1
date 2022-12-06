@@ -6,11 +6,11 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 15:10:33 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/05 19:56:34 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/06 19:26:34 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	is_num(char check)
 {
@@ -23,7 +23,7 @@ int	is_num(char check)
 		return (ERR_INVAL);
 }
 
-char	*join(char const *s1, char const *s2)
+/* char	*join(char const *s1, char const *s2)
 {
 	char	*tmp;
 	char	*res;
@@ -31,13 +31,13 @@ char	*join(char const *s1, char const *s2)
 	tmp = ft_strjoin(s1, " ");
 	res = ft_strjoin(tmp, s2);
 	return (res);
-}
+} */
 
 int	size(char **count)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	while (count[i + 1] != NULL)
 		++i;
 	return (i);

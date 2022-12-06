@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_ab.c                                         :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 19:33:49 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/05 19:48:07 by pgorner          ###   ########.fr       */
+/*   Created: 2022/12/06 15:22:38 by pgorner           #+#    #+#             */
+/*   Updated: 2022/12/06 17:52:33 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ss(t_s *stacks)
+void	sort(t_s *stacks)
 {
-	sa(stacks);
-	sb(stacks);
-}
+	int	i;
 
-void	rr(t_s *stacks)
-{
-	ra(stacks);
-	rb(stacks);
-}
-
-void	rrr(t_s *stacks)
-{
-	rra(stacks);
-	rrb(stacks);
+	i = size(stacks->a);
+/* 	if (size(stacks->a) <= 5)
+		sort_small(stacks);
+	if (size(stacks->a) > 5)
+		sort_big(stacks); */
 }
