@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:29:25 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/06 17:44:21 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/07 19:44:05 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,19 @@ typedef struct stacks
 {
 	char	**a;
 	char	**b;
-	char	**tmp;
-	char	**res;
 	char	*str;
+	char	**tmp;
+	int		speed;
+	int		prevspeed;
+	int		num;
 }	t_s;
+
+/* typedef struct info
+{
+	int		start;
+	int		flip;
+}	t_s; */
+// for start: top = 0 bottom = 1
 //==============================================================================
 //----------------------------------PUSH_SWAP-----------------------------------
 //==============================================================================
@@ -134,7 +143,19 @@ int		sorted(t_s *stacks);
 //==============================================================================
 //----------------------------------SORT----------------------------------------
 //==============================================================================
+/* //	calls sorting by size (smaller or larger than 5)
+void	sort(t_s *stacks);
+// small sort for stacks.a size >= 5
+void	sort_small(t_s *stacks); */
+//==============================================================================
+//----------------------------------SORTNEW-------------------------------------
+//==============================================================================
 //	calls sorting by size (smaller or larger than 5)
 void	sort(t_s *stacks);
-
+//counts the number of operatiosn to get the next num
+void	operations(t_s *stacks);
+// finds out if upper or lower number closer
+void	maxormin(t_s *stacks, int i);
+// finds out how many rotations to get it ot the top
+void	place(t_s *stacks, int i);
 #endif
