@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 15:10:33 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/07 16:16:39 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/08 15:10:11 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,6 @@ int	is_num(char check)
 	else
 		return (ERR_INVAL);
 }
-
-/* char	*join(char const *s1, char const *s2)
-{
-	char	*tmp;
-	char	*res;
-
-	tmp = ft_strjoin(s1, " ");
-	res = ft_strjoin(tmp, s2);
-	return (res);
-} */
 
 int	size(char **count)
 {

@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:27:03 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/07 17:31:52 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/08 15:08:09 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,24 @@ void	sb(t_s *stacks)
 
 void	pb(t_s *stacks)
 {
+	int i;
+
+	i = size(stacks->b) + 1;
 	if (size(stacks->a) != -1)
 	{
-		stacks->b[size(stacks->b) + 1] = stacks->a[size(stacks->a)];
-		stacks->a[size(stacks->a)] = NULL;
+		while (i > 0)
+		{
+			stacks->b[i] = stacks->b[i - 1];
+			--i;
+		}
+		stacks->b[0] = stacks->a[0];
+		i  = 0;
+		while (i < size(stacks->a))
+		{
+			stacks->a[i] = stacks->a[i + 1];
+			++i;
+		}
+		stacks->a[i] = NULL;
 	}
 }
 

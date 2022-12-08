@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:16:03 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/07 17:31:13 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/08 15:09:02 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,24 @@ void	sa(t_s *stacks)
 
 void	pa(t_s *stacks)
 {
+	int i;
+
+	i = size(stacks->a) + 1;
 	if (size(stacks->b) != -1)
 	{
-		stacks->a[size(stacks->a) + 1] = stacks->b[size(stacks->b)];
-		stacks->b[size(stacks->b)] = NULL;
+		while (i > 0)
+		{
+			stacks->a[i] = stacks->a[i - 1];
+			--i;
+		}
+		i = 0;
+		stacks->a[0] = stacks->b[0];
+		while (i <= size(stacks->b))
+		{
+			stacks->b[i] = stacks->b[i + 1];
+			++i;
+		}
+		stacks->b[i] = NULL;
 	}
 }
 

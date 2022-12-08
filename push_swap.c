@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:24:19 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/07 18:40:19 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/08 17:27:13 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char *argv[])
 	int	j;
 	t_s	stacks;
 
+
 	read_input(argc, argv, &stacks);
 
 	j = 0;
@@ -39,20 +40,22 @@ int	main(int argc, char *argv[])
 		printf("stack a: %s\n", stacks.a[j]);
 		++j;
 	}
+/* 		flags(&stacks, P, B);
+		flags(&stacks, P, B); */
 
 	if (sorted(&stacks) == NO)
 	{
 		printf("not sorted so:\nsorting: ......\n");
 		sort(&stacks);
 	}
-
+/*
 	j = 0;
 	i = size(stacks.a);
 	while (j <= i)
 	{
 		printf("stack a 2nd time: %s\n", stacks.a[j]);
 		++j;
-	}
+	} */
 	printf("done");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:29:25 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/07 19:44:05 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/08 15:31:03 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,4 +158,8 @@ void	operations(t_s *stacks);
 void	maxormin(t_s *stacks, int i);
 // finds out how many rotations to get it ot the top
 void	place(t_s *stacks, int i);
+//==============================================================================
+//----------------------------------SORT_UTILS----------------------------------
+//==============================================================================
+void	maxormin(t_s *stacks, int i);
 #endif

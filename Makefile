@@ -30,6 +30,7 @@ SRC =		push_swap.c				\
 			./utils/utils.c			\
 			./sorting/check_sorted.c	\
 			./sorting/sort.c			\
+			./sorting/sort_utils.c		\
 
 OBJS =		$(SRC:.c=.o)
 
