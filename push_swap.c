@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:24:19 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/11 17:56:16 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/12 13:34:52 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char *argv[])
 
 
 	read_input(argc, argv, &stacks);
+
 
 	j = 0;
 	i = test(stacks.a);
@@ -61,9 +62,19 @@ int	main(int argc, char *argv[])
 		flags(&stacks, R, B);
 
 	while (size(stacks.b) != -1)
+	{
+		j = 0;
+		while (j<5)
+		{
+			//printf("stack a: %s stack b: %s\n", stacks.a[j], stacks.b[j]);
+			j++;
+		}
 		flags(&stacks, P, A);
-	j = 0;
+	}
 
+
+
+	j = 0;
 	i = size(stacks.a);
 	while (j <= i)
 	{

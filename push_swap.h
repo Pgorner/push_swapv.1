@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:29:25 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/11 15:17:08 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/12 13:19:43 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct stacks
 {
 	char	**a;
 	char	**b;
-	char	*str;
+	char	*ret;
 	char	**tmp;
 	int		speed;
 	int		prevspeed;

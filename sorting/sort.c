@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 18:54:05 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/11 18:11:47 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/12 13:59:51 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,36 +99,6 @@ int	actionreturn(t_s *stacks, int i)
 	return (0);
 }
 
-int	actionreturnb(t_s *stacks, int i)
-{
-	int hi;
-	int lo;
-	int o;
-
-	hi = 0;
-	lo = 0;
-	o = i;
-	while (o <= size(stacks->b))
-	{
-		++o;
-		++lo;
-	}
-	o = i;
-	while (o > 0)
-	{
-		--o;
-		++hi;
-	}
-	if (hi > lo)
-		return (1);
-	else if (lo > hi)
-		return (2);
-	else if (lo == hi)
-		return (1);
-	return (0);
-}
-
-
 int	nextlowernumber(t_s *stacks, int i)
 {
 	int	low;
@@ -186,6 +156,9 @@ void	hilow(t_s *stacks, int i)
 	if (placereturn(stacks, nexthighernumber(stacks, i))
 	< placereturn(stacks, nextlowernumber(stacks, i)))
 		stacks->speed = stacks->speed + placereturn(stacks, nexthighernumber(stacks, i));
+/* 	if (placereturn(stacks, nexthighernumber(stacks, i))
+	== placereturn(stacks, nextlowernumber(stacks, i)))
+		stacks->speed = stacks->speed + placereturn(stacks, nextlowernumber(stacks, i)); */
 }
 
 int	actionhilow(t_s *stacks, int i)
@@ -199,8 +172,13 @@ int	actionhilow(t_s *stacks, int i)
 	< placereturn(stacks, nextlowernumber(stacks, i))
 	|| (nextlowernumber(stacks, i) == -1))
 		return (nexthighernumber(stacks, i));
-	return (123);
+	//printf("nextlo: %i \n placereturn: %i \n nexthi: %i \n placereturn: %i \n", nextlowernumber(stacks, i), placereturn(stacks, nextlowernumber(stacks, i)), nexthighernumber(stacks, i), placereturn(stacks, nexthighernumber(stacks, i)));
+	else
+		return (nextlowernumber(stacks, i));
 }
+/* 	return (printf("FUCK"), 0); */
+	/* (placereturn(stacks, nexthighernumber(stacks, i))
+	== placereturn(stacks, nextlowernumber(stacks, i))) */
 
 void	operations(t_s *stacks)
 {
@@ -217,7 +195,7 @@ void	operations(t_s *stacks)
 		//printf("    speed bf place: %d\n", stacks->speed);
 		place(stacks, i); // finds out fastest way to get num from a to top
 		//printf("    speed af place: %d\n", stacks->speed);
-		hilow(stacks, i);
+		hilow(stacks, i); //finds out if next highest or next lowest number is faster to reach
 		//printf("    speed af hilo: %d\n", stacks->speed);
 		//maxormin(stacks, i); // finds out max or min number clos
 /* 		if (stacks->speed < stacks->prevspeed
@@ -261,7 +239,7 @@ void	sortit(t_s *stacks)
 
 void	sort(t_s *stacks)
 {
-	//int j;
+/* 	int j; */
 
 	if (size(stacks->b) == -1)
 	{
@@ -270,19 +248,17 @@ void	sort(t_s *stacks)
 	}
 	while (size(stacks->a) != -1)
 	{
-/* 		//if (size(stacks->a) == 0)
 		operations(stacks);
-		//flags(stacks, P, B);
-		j = 0;
-		while (j<6)
-		{
-			printf("stack a: %s stack b: %s\n", stacks->a[j], stacks->b[j]);
-			j++;
-		} */
 		sortit(stacks);
 	}
 }
 
+/* 		j = 0;
+		while (j<5)
+		{
+			//printf("stack a: %s stack b: %s\n", stacks->a[j], stacks->b[j]);
+			j++;
+		} */
 /* ./push swap 1 4 8 7
 stacks->a[0] = 1
 stacks->a[1] = 4
