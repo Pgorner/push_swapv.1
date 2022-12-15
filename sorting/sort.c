@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 18:54:05 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/15 19:23:21 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/15 20:01:44 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ void	sort(t_s *stacks)
 	while (size(stacks->a) != -1)
 	{
 		operationsa(stacks);
-/* 		printf("stacks->num%i\n", stacks->num);
-		printf("NUMBER%s\n", stacks->a[stacks->num]);
-		printf("nexthigher%s\n", stacks->b[nexthighernumberb(stacks, stacks->num)]); */
 		pushb(stacks);
 		flags(stacks, P, B);
 	}

@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:19:29 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/15 18:13:42 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/15 20:26:11 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	nextlowernumberb(t_s *stacks, int i)
 
 int	nexthighernumberb(t_s *stacks, int i)
 {
-	int hi;
-	int j;
+	int	hi;
+	int	j;
 
 	hi = 0;
 	j = 1;
@@ -49,7 +49,7 @@ int	nexthighernumberb(t_s *stacks, int i)
 	while (j <= size(stacks->b))
 	{
 		if (ft_atoi(stacks->b[hi]) > ft_atoi(stacks->b[j])
-		&& ft_atoi(stacks->b[j]) > ft_atoi(stacks->a[i]))
+			&& ft_atoi(stacks->b[j]) > ft_atoi(stacks->a[i]))
 				hi = j;
 		else if (ft_atoi(stacks->b[j]) == (ft_atoi(stacks->a[i]) + 1))
 				hi = j;
@@ -63,8 +63,8 @@ int	nexthighernumberb(t_s *stacks, int i)
 
 void	positionb(t_s *stacks, int i)
 {
-	int k;
-	int j;
+	int	k;
+	int	j;
 
 	k = (0 - nextlowernumberb(stacks, i)) * -1;
 	j = size(stacks->b) - nextlowernumberb(stacks, i) + 1;
@@ -73,4 +73,3 @@ void	positionb(t_s *stacks, int i)
 	else
 		stacks->speed = stacks->speed + k;
 }
-

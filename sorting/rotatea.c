@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 19:14:42 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/15 16:18:28 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/15 20:02:02 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	rotatea(t_s *stacks)
 {
-	int i;
-	int j;
-	int k;
+	int	i;
+	int	j;
+	int	k;
 
 	i = 0;
 	j = 1;
@@ -40,9 +40,9 @@ void	rotatea(t_s *stacks)
 
 void	rotateb(t_s *stacks)
 {
-	int i;
-	int j;
-	int k;
+	int	i;
+	int	j;
+	int	k;
 
 	i = 0;
 	j = 1;
