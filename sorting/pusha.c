@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:53:52 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/14 19:41:23 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/15 18:23:20 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,4 +107,3 @@ void	pusha(t_s *stacks)
 	rotstackb(stacks);
 }
 
-//make it better by seeing if the way to rotate matter regarding the lower or highe rnumber placement

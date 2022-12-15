@@ -6,9 +6,6 @@
 #	██║ ╚═╝ ██║██║  ██║██║  ██╗███████╗██║     ██║███████╗███████╗
 #	╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝╚══════╝
 
-
-INSERT BUILD TO COMPARE HOW MUCH DISTANCE IS INBETWEEN THE NUMBERS
-
 NAME = push_swap
 
 CC =		cc
@@ -40,7 +37,7 @@ SRC =		valid.c						\
 			./sorting/sort_small.c		\
 			./sorting/operationsa.c		\
 			./sorting/operationsb.c		\
-			./sorting/check_sorted.c	\
+			./sorting/check_sorted.c
 
 OBJS =		$(SRC:.c=.o)
 

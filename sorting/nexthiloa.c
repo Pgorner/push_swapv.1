@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:19:29 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/14 18:49:05 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/15 16:10:24 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	nextlowernumbera(t_s *stacks, int i)
 	int	low;
 	int	j;
 
-	if (stacks->b[i] < 0)
-		return (nextlonega(stacks, i));
 	j = 0;
 	low = 0;
 	while (j <= size(stacks->a))

@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:53:52 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/14 19:45:59 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/15 19:20:03 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	rotatestackb(t_s *stacks)
 {
 	int	lo;
 	int hi;
+	int s;
 	int	valo;
 	int vahi;
 
@@ -23,6 +24,7 @@ void	rotatestackb(t_s *stacks)
 	vahi = 0;
 	lo = nextlowernumberb(stacks, stacks->num);
 	hi = nexthighernumberb(stacks, stacks->num);
+	s = size(stacks->b);
 	if (lo != -1)
 		valo = ft_atoi(stacks->b[lo]);
 	if (hi != -1)
@@ -39,10 +41,10 @@ void	rotatestackb(t_s *stacks)
 	else
 	{
 		if ((size(stacks->b) - hi) > hi + 1)
-			while (ft_atoi(stacks->b[size(stacks->b)]) != vahi)
+			while (ft_atoi(stacks->b[s]) != vahi)
 				flags(stacks, R, B);
 		else
-			while (ft_atoi(stacks->b[size(stacks->b)]) != vahi)
+			while (ft_atoi(stacks->b[s]) != vahi)
 				flags(stacks, RR, B);
 	}
 }
@@ -67,7 +69,7 @@ void	rotatestacka(t_s *stacks)
 
 void	pushb(t_s *stacks)
 {
-	rotatestacka(stacks);
 	rotatestackb(stacks);
+	rotatestacka(stacks);
 }
 

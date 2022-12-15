@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:19:29 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/14 17:47:07 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/15 18:13:42 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	nexthighernumberb(t_s *stacks, int i)
 	int j;
 
 	hi = 0;
-	j = 0;
+	j = 1;
 	while (j <= size(stacks->b))
 	{
 		if (ft_atoi(stacks->b[hi]) < ft_atoi(stacks->b[j]))
@@ -50,6 +50,8 @@ int	nexthighernumberb(t_s *stacks, int i)
 	{
 		if (ft_atoi(stacks->b[hi]) > ft_atoi(stacks->b[j])
 		&& ft_atoi(stacks->b[j]) > ft_atoi(stacks->a[i]))
+				hi = j;
+		else if (ft_atoi(stacks->b[j]) == (ft_atoi(stacks->a[i]) + 1))
 				hi = j;
 		++j;
 	}
