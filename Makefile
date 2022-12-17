@@ -23,6 +23,8 @@ RM =		rm -rf
 SRC =		valid.c						\
 			push_swap.c					\
 			read_input.c				\
+			validsize.c					\
+			ft_atol.c					\
 			./utils/utils.c				\
 			./utils/utils_a.c			\
 			./utils/utils_b.c			\
@@ -31,7 +33,6 @@ SRC =		valid.c						\
 			./sorting/pusha.c			\
 			./sorting/pushb.c			\
 			./sorting/rotatea.c			\
-			./sorting/negative.c		\
 			./sorting/nexthiloa.c		\
 			./sorting/nexthilob.c		\
 			./sorting/sort_small.c		\

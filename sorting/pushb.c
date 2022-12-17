@@ -6,45 +6,43 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:53:52 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/15 20:17:09 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/16 18:14:39 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	assignvaluesb(t_s *stacks)
+{
+	stacks->valo = 0;
+	stacks->vahi = 0;
+	if (nlnb(stacks, stacks->num) != -1)
+		stacks->valo = ft_atoi(stacks->b[nlnb(stacks, stacks->num)]);
+	if (nhnb(stacks, stacks->num) != -1)
+		stacks->vahi = ft_atoi(stacks->b[nhnb(stacks, stacks->num)]);
+}
+
 void	rotatestackb(t_s *stacks)
 {
-	int	lo;
-	int	hi;
-	int	s;
-	int	valo;
-	int	vahi;
-
-	valo = 0;
-	vahi = 0;
-	lo = nextlowernumberb(stacks, stacks->num);
-	hi = nexthighernumberb(stacks, stacks->num);
-	s = size(stacks->b);
-	if (lo != -1)
-		valo = ft_atoi(stacks->b[lo]);
-	if (hi != -1)
-		vahi = ft_atoi(stacks->b[hi]);
-	if (lo != -1)
+	assignvaluesb(stacks);
+	if (nlnb(stacks, stacks->num) != -1)
 	{
-		if ((size(stacks->b) - lo + 1) > lo)
-			while (ft_atoi(stacks->b[0]) != valo)
+		if ((size(stacks->b) - nlnb(stacks, stacks->num) + 1)
+			> nlnb(stacks, stacks->num))
+			while (ft_atoi(stacks->b[0]) != stacks->valo)
 				flags(stacks, R, B);
 		else
-			while (ft_atoi(stacks->b[0]) != valo)
+			while (ft_atoi(stacks->b[0]) != stacks->valo)
 				flags(stacks, RR, B);
 	}
 	else
 	{
-		if ((size(stacks->b) - hi) > hi + 1)
-			while (ft_atoi(stacks->b[s]) != vahi)
+		if ((size(stacks->b) - nhnb(stacks, stacks->num))
+			> nhnb(stacks, stacks->num) + 1)
+			while (ft_atoi(stacks->b[size(stacks->b)]) != stacks->vahi)
 				flags(stacks, R, B);
 		else
-			while (ft_atoi(stacks->b[s]) != vahi)
+			while (ft_atoi(stacks->b[size(stacks->b)]) != stacks->vahi)
 				flags(stacks, RR, B);
 	}
 }

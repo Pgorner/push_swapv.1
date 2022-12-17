@@ -6,13 +6,13 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:19:29 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/15 20:26:48 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/16 18:00:37 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	nextlowernumbera(t_s *stacks, int i)
+int	nlna(t_s *stacks, int i)
 {
 	int	low;
 	int	j;
@@ -32,7 +32,7 @@ int	nextlowernumbera(t_s *stacks, int i)
 		return (low);
 }
 
-int	nexthighernumbera(t_s *stacks, int i)
+int	nhna(t_s *stacks, int i)
 {
 	int	hi;
 	int	j;
@@ -64,8 +64,8 @@ void	positiona(t_s *stacks, int i)
 	int	k;
 	int	j;
 
-	k = (0 - nextlowernumbera(stacks, i)) * -1;
-	j = size(stacks->a) - nextlowernumbera(stacks, i) + 1;
+	k = (0 - nlna(stacks, i)) * -1;
+	j = size(stacks->a) - nlna(stacks, i) + 1;
 	if (i > j)
 		stacks->speed = stacks->speed + j;
 	else

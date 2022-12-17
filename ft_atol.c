@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 17:24:19 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/17 14:33:33 by pgorner          ###   ########.fr       */
+/*   Created: 2022/12/17 13:42:08 by pgorner           #+#    #+#             */
+/*   Updated: 2022/12/17 14:41:00 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+long	ft_atol(const char *str)
 {
-	t_s	stacks;
+	long	res;
+	long	sign;
+	size_t	i;
 
-	stacks.operations = 0;
-	if (read_input(argc, argv, &stacks) != ERR_INVAL)
+	res = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+	i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (sorted(&stacks) == NO)
-		{
-			if (size(stacks.a) > 2)
-				sort(&stacks);
-			if (size(stacks.a) == 2)
-				sort_small(&stacks);
-			if (size(stacks.a) == 1)
-				sort_two(&stacks);
-		}
-	while (size(stacks.b) != -1)
-		flags(&stacks, P, A);
-	rotatea(&stacks);
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (0);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
+	}
+	return (res * sign);
 }
-	//printf("\n %i \n", stacks.operations);

@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:25:25 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/13 15:54:14 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/17 14:34:19 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	read_input(int argc, char *argv[], t_s *stacks)
 		return (ERR_INVAL);
 	stacks->str = join_inpt(argc, argv);
 	stacks->a = ft_split(stacks->str, SPACE);
+	if (ft_error(validsize(stacks) == ERR_INVAL) == ERR_INVAL)
+		return (ERR_INVAL);
 	if (ft_error(check_double(stacks) == ERR_INVAL) == ERR_INVAL)
 		return (ERR_INVAL);
 	stacks->tmp = ft_calloc(size(stacks->a), sizeof(char));

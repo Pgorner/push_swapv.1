@@ -6,43 +6,43 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:53:52 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/15 20:18:46 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/16 18:03:51 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	assignvaluesa(t_s *stacks)
+{
+	stacks->valo = 0;
+	stacks->vahi = 0;
+	if (nlna(stacks, stacks->num) != -1)
+		stacks->valo = ft_atoi(stacks->a[nlna(stacks, stacks->num)]);
+	if (nhna(stacks, stacks->num) != -1)
+		stacks->vahi = ft_atoi(stacks->a[nhna(stacks, stacks->num)]);
+}
+
 void	rotstacka(t_s *stacks)
 {
-	int	lo;
-	int	hi;
-	int	valo;
-	int	vahi;
-
-	valo = 0;
-	vahi = 0;
-	lo = nextlowernumbera(stacks, stacks->num);
-	hi = nexthighernumbera(stacks, stacks->num);
-	if (lo != -1)
-		valo = ft_atoi(stacks->a[lo]);
-	if (hi != -1)
-		vahi = ft_atoi(stacks->a[hi]);
-	if (lo != -1)
+	assignvaluesa(stacks);
+	if (nlna(stacks, stacks->num) != -1)
 	{
-		if ((size(stacks->a) - lo + 1) > lo)
-			while (ft_atoi(stacks->a[size(stacks->a)]) != valo)
+		if ((size(stacks->a) - nlna(stacks, stacks->num) + 1)
+			> nlna(stacks, stacks->num))
+			while (ft_atoi(stacks->a[size(stacks->a)]) != stacks->valo)
 				flags(stacks, R, A);
 		else
-			while (ft_atoi(stacks->a[size(stacks->a)]) != valo)
+			while (ft_atoi(stacks->a[size(stacks->a)]) != stacks->valo)
 				flags(stacks, RR, A);
 	}
 	else
 	{
-		if ((size(stacks->a) - hi) > hi + 1)
-			while (ft_atoi(stacks->a[0]) != vahi)
+		if ((size(stacks->a) - nhna(stacks, stacks->num))
+			> nhna(stacks, stacks->num) + 1)
+			while (ft_atoi(stacks->a[0]) != stacks->vahi)
 				flags(stacks, R, A);
 		else
-			while (ft_atoi(stacks->a[0]) != vahi)
+			while (ft_atoi(stacks->a[0]) != stacks->vahi)
 				flags(stacks, RR, A);
 	}
 }

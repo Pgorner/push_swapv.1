@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   validsize.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 17:24:19 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/17 14:33:33 by pgorner          ###   ########.fr       */
+/*   Created: 2022/12/17 13:44:04 by pgorner           #+#    #+#             */
+/*   Updated: 2022/12/17 14:42:50 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+int	validsize(t_s *stacks)
 {
-	t_s	stacks;
+	int i;
+	size_t j;
 
-	stacks.operations = 0;
-	if (read_input(argc, argv, &stacks) != ERR_INVAL)
+	i = 0;
+	j = 0;
+	while (i <= size(stacks->a))
 	{
-		if (sorted(&stacks) == NO)
-		{
-			if (size(stacks.a) > 2)
-				sort(&stacks);
-			if (size(stacks.a) == 2)
-				sort_small(&stacks);
-			if (size(stacks.a) == 1)
-				sort_two(&stacks);
-		}
-	while (size(stacks.b) != -1)
-		flags(&stacks, P, A);
-	rotatea(&stacks);
+		if (ft_atol(stacks->a[i]) < INT_MIN
+			|| ft_atol(stacks->a[i]) > INT_MAX)
+				return (ERR_INVAL);
+		j = 0;
+		i++;
 	}
-	return (0);
+	return (SUCESS);
 }
-	//printf("\n %i \n", stacks.operations);

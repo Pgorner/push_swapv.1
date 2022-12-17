@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:15:20 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/15 20:25:26 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/16 18:01:38 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,14 @@ void	placeinb(t_s *stacks, int i)
 
 	hi = 0;
 	lo = 0;
-	lo = nextlowernumberb(stacks, i);
-	hi = size(stacks->b) - nexthighernumberb(stacks, i);
-	if (((lo < hi && nextlowernumberb(stacks, i) != -1)
-			|| nexthighernumberb(stacks, i) == -1)
+	lo = nlnb(stacks, i);
+	hi = size(stacks->b) - nhnb(stacks, i);
+	if (((lo < hi && nlnb(stacks, i) != -1)
+			|| nhnb(stacks, i) == -1)
 		|| lo == hi)
 		stacks->speed = stacks->speed + lo;
-	if ((hi < lo && nexthighernumberb(stacks, i) != -1)
-		|| nextlowernumberb(stacks, i) == -1)
+	if ((hi < lo && nhnb(stacks, i) != -1)
+		|| nlnb(stacks, i) == -1)
 		stacks->speed = stacks->speed + hi;
 }
 

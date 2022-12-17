@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:15:20 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/15 20:21:32 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/16 18:02:03 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,14 @@ void	placeina(t_s *stacks, int i)
 
 	hi = 0;
 	lo = 0;
-	lo = nextlowernumbera(stacks, i);
-	hi = size(stacks->a) - nexthighernumbera(stacks, i);
-	if (((lo < hi && nextlowernumbera(stacks, i) != -1)
-			|| nexthighernumbera(stacks, i) == -1)
+	lo = nlna(stacks, i);
+	hi = size(stacks->a) - nhna(stacks, i);
+	if (((lo < hi && nlna(stacks, i) != -1)
+			|| nhna(stacks, i) == -1)
 		|| lo == hi)
 		stacks->speed = stacks->speed + lo;
-	if ((hi < lo && nexthighernumbera(stacks, i) != -1)
-		|| nextlowernumbera(stacks, i) == -1)
+	if ((hi < lo && nhna(stacks, i) != -1)
+		|| nlna(stacks, i) == -1)
 		stacks->speed = stacks->speed + hi;
 }
 
