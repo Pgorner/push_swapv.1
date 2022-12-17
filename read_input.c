@@ -6,27 +6,11 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:25:25 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/17 14:34:19 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/17 14:46:35 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* void	insert_stack(t_s *stacks)
-{
-	int	i;
-	int	s;
-
-//	s = size(stacks->tmp);
-	i = 0;
-	printf("%i", i);
-	while (s != 0)
-	{
-		stacks->a[i] = stacks->tmp[s];
-		++i;
-		--s;
-	}
-} */
 
 int	check_valid(int argc, char *argv[])
 {
@@ -52,10 +36,3 @@ int	read_input(int argc, char *argv[], t_s *stacks)
 	stacks->b = ft_calloc(size(stacks->a), sizeof(char));
 	return (0);
 }
-
-/* 	i = size(stacks->a);
-	while (j <= i)
-	{
-		printf("\n%s", stacks->a[j]);
-		++j;
-	} */

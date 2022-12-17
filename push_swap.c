@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:24:19 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/17 14:33:33 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/17 14:47:24 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	main(int argc, char *argv[])
 			if (size(stacks.a) == 1)
 				sort_two(&stacks);
 		}
-	while (size(stacks.b) != -1)
-		flags(&stacks, P, A);
-	rotatea(&stacks);
+		while (size(stacks.b) != -1)
+			flags(&stacks, P, A);
+		rotatea(&stacks);
 	}
 	return (0);
 }

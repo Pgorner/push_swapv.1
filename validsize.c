@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 13:44:04 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/17 14:42:50 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/17 14:47:08 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	validsize(t_s *stacks)
 {
-	int i;
-	size_t j;
+	int		i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
@@ -23,7 +23,7 @@ int	validsize(t_s *stacks)
 	{
 		if (ft_atol(stacks->a[i]) < INT_MIN
 			|| ft_atol(stacks->a[i]) > INT_MAX)
-				return (ERR_INVAL);
+			return (ERR_INVAL);
 		j = 0;
 		i++;
 	}
